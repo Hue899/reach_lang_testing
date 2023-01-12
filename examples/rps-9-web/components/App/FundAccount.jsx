@@ -13,7 +13,7 @@ const FundAccount = () => {
 			<hr />
 			Would you like to fund your account with additional {standardUnit}?
 			<br />
-			(This only works on certain devnets)
+			(This only works on select devnets)
 			<br />
 			<input
 				type='number'

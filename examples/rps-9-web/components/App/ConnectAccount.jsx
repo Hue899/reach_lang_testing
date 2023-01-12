@@ -5,7 +5,7 @@ const ConnectAccount = () => {
 	const { connecAccount } = useReach();
 	return (
 		<div>
-			Please wait while we connect to your account. If this takes more than a
+			Please wait while we connect to your account. If this takes longer than a
 			few seconds, there may be something wrong.
 			<div>
 				<button onClick={connecAccount}>Connect Algo Wallet</button>

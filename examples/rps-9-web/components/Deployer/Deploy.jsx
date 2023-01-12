@@ -12,4 +12,4 @@ const Deploy = () => {
 	);
 };
 
-export default Deploy;
+export default Deploy; 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import {loadStdlib, ALGO_MyAlgoConnect as MyAlgoConnect,} from "@reach-sh/stdlib";
 import * as backend from "../build/index.main.mjs";
-const reach = loadStdlib ("ALGO");
+import {loadStdlib, ALGO_MyAlgoConnect as MyAlgoConnect,} from "@reach-sh/stdlib";
+const reach = loadStdlib("ALGO");
 
-reach.setWalletFallback(reach.walletFallback({providerEnv: "TestNet", MyAlgoConnect,}));
+reach.setWalletFallback(reach.walletFallback({ providerEnv: "TestNet", MyAlgoConnect,}));
 
 const handToInt = { ROCK: 0, PAPER: 1, SCISSORS: 2 };
 const intToOutcome = ["Bob wins!", "Draw!", "Alice wins!"];
@@ -36,7 +36,7 @@ const ReachContextProvider = ({ children }) => {
 	const [resolveHandP, setResolveHandP] = useState(null);
 	const [hand, setHand] = useState({});
 
-	const connecAccount = async () => {
+	const connecAccount = async () => { 
 		const account = await reach.getDefaultAccount();
 		const balAtomic = await reach.balanceOf(account);
 		const balance = reach.formatCurrency(balAtomic, 4);
@@ -153,12 +153,14 @@ const ReachContextProvider = ({ children }) => {
 		contract,
 		playHand,
 
+		
 		user,
 		views,
 		wager,
 		fundAccount,
 		connecAccount,
 		skipFundAccount,
+
 		selectDeployer,
 		selectAttacher,
 		hand,
@@ -171,6 +173,7 @@ const ReachContextProvider = ({ children }) => {
 		resolveHandP,
 		outcome,
 
+	
 		attach,
 		acceptWager,
 		termsAccepted,

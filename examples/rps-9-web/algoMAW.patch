@@ -1,3 +1,4 @@
+--- a/index.js
 +++ b/index.js
 @@ -6,7 +6,10 @@
  import './index.css';
