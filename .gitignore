@@ -21,3 +21,4 @@ hs/app-closed
 hs/package.closed.yaml
 hs/src/Reach/Closed
 hs/test/Reach/Closed
+examples/rps-9-web/.dockerignore
