@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+  }
+    
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  .App {
+    text-align: center;
+  }
+  
+  .App-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;  
+  }
+  
+  .App-link {
+    color: #61dafb;
+    border-radius: 4px;
+  }
+  
+  .App-logo {
+    height: 45vmin;
+    position: sticky;
+    pointer-events: none;
+    color: black;
+  }
+  .nftimg {
+    /* height: 30vmin; */
+    position: relative;
+    pointer-events: auto;
+  }
+  
+  @media (prefers-reduced-motion: no-preference){
+    .App-logo{
+      animation: pulse infinite 3s linear;
+    }
+  }
+  
+  @keyframes pulse{
+    0%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    50%{
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  .Sale{
+    color: white;
+    padding: 5px; 
+  }
+  
+  
+  input[type=number] {
+    font-size: calc(10px + 2vmin);
+    width: 4em;
+  }
+  
+  button {
+    font-size: calc(10px + 2vmin);
+    background-color:  whitesmoke;
+    width: calc(15px +2vmin);
+    border-radius: 12px;
+  }
+  
+  .alignleft{
+    float: left;
+  }
+  
+  .alignright{
+    float: right;
+  }
+  
+  ul{
+    text-align: left;
+    list-style-type: '»';
+  }
+  
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  textarea {
+    font-size: calc(10px + 2vmin);
+  }
+  
+  .ContractInfo {
+    font-size: calc(10px + 1vmin);
+    text-align: left;
+    width: 90vw;
+    height: 7em;
+    padding: 2vw;
+    overflow-x: scroll;
+    white-space: pre;
+  }
+  
+  .background-container{
+    background-size: cover;
+    background-attachment: scroll;
+    overflow-x: scroll;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .stars{
+    background: black url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png") repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    overflow-x: auto;
+    position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+        z-index: 0;
+  }
+  
+  .twinkling{
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    background-attachment: scroll;
+    background-size: cover;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+  }
+  
+  .clouds{
+    width: 100%;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+    background-attachment: scroll;
+    overflow-y: auto;
+    background-size: cover;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+  }
+  
+  img{
+    height: 50vh;
+    width: 50vh;
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+  }
