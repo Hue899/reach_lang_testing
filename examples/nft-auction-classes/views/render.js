@@ -1,34 +1,21 @@
+import ReactDOM from 'react-dom';
 import React from 'react';
 
-const exports = {};
-
-exports.Wrapper = class extends React.Component{
-  render() {
-    const {content} = this.props;
-    return (
-      <div className="Deployer">{content}</div>
-    );
-  }
+export function renderDOM(app){
+  ReactDOM.render(
+    <React.StrictMode>{app}</React.StrictMode>,
+    document.getElementById('root')
+  );
 }
 
-exports.Done = class extends React.Component{
-  render(){
-    //const {outcome} = this.props;
-    return(
-      <div className="Sale">
-      </div>
-    );
-  }
+export function renderView(parent, Views){
+  parent.state = parent.state || {};
+  const {view, ContentView} = parent.state;
+  const View = view === 'Wrapper'
+    ? ContentView
+    :Views[view];
+  const Wrapper = Views['Wrapper'];
+  const props = {...parent.props, ...parent.state, parent};
+  const content = <View {...props} />;
+  return <Wrapper {...{content}} />;
 }
-
-exports.Timeout = class extends React.Component{
-  render() {
-    return(
-      <div className='Game'>
-        There's been a timeout. Someone took too long...
-      </div>
-    );
-  }
-}
-
-export default exports;

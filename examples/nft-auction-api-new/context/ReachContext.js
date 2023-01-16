@@ -4,7 +4,7 @@ import {loadStdlib, ALGO_MyAlgoConnect as MyAlgoConnect,} from "@reach-sh/stdlib
 const reach = loadStdlib("ALGO");
 
 reach.setWalletFallback(reach.walletFallback({ providerEnv: "TestNet", MyAlgoConnect,}));
-const { standardUnit } = reach;
+const { standardUnit } = stdlib;
 const sleep = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
 
 export const ReachContext = React.createContext();
@@ -66,7 +66,7 @@ const ReachContextProvider = ({ children }) => {
 		setView('Deploying');
 		setMin(stdlib.parseCurrency(min));
 		backend.Creator(ctc, this);
-		const ctcInfoStr = JSON.stringify(await ctc.getInfo(), null 2);
+		const ctcInfoStr = JSON.stringify(await ctc.getInfo(), null, 2);
 		setView('WaitingForAttacher');
 		setCtcInfoStr(ctcInfoStr);
 	}
@@ -126,11 +126,11 @@ const ReachContextProvider = ({ children }) => {
 		setView('WaitingForTurn');
 		setAddr(stdlib.formatAddress(add));
 		setBid(stdlib.formatCurrency(b));
-	}
 	
-	const setBid = (bid) => {
+		const setBid = (bid) => {
 		setView('WaitingForTurn');
 		setBid(bid);
+		}
 	}
 	
 	const ReachContextValues = {
@@ -174,5 +174,5 @@ const ReachContextProvider = ({ children }) => {
 		</ReachContext.Provider>
 	);
 };
-
+	 
 export default ReachContextProvider;

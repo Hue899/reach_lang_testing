@@ -8,15 +8,14 @@ const DeployerOrAttacher = () => {
 			Please select a role:
 			<br />
 			<p>
-				<button onClick={() => selectDeployer()}>Deployer</button>
-				<br /> Set the wager, deploy the contract.
+				<button onClick={() => selectCreator()}>Create + Sell an NFT</button>
 			</p>
 			<p>
-				<button onClick={() => selectAttacher()}>Attacher</button>
-				<br /> Attach to the Deployer's contract.
+				<button onClick={() => selectBidder()}>Bid on an NFT</button>
 			</p>
 		</div>
 	);
+
 };
 
 export default DeployerOrAttacher;

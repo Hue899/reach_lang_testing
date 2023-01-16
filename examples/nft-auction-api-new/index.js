@@ -1,6 +1,7 @@
 import * as AppViews from "./components/App/index.js";
 import * as Attacher from "./components/Attacher/index.js";
 import * as Deployer from "./components/Deployer/index.js";
+import * as Playerviews from "./components/Player/index.js";
 import RenderViews, { renderDOM } from "./views/renderViews";
 import ReachContextProvider from "./context/ReachContext";
 import './index.css';
@@ -14,6 +15,7 @@ const V = {
 	...AppViews,
 	...Attacher,
 	...Deployer,
+	...Playerviews,
 };
 
 function App() {
