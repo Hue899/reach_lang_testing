@@ -4,12 +4,12 @@ import {loadStdlib, ALGO_MyAlgoConnect as MyAlgoConnect,} from "@reach-sh/stdlib
 const reach = loadStdlib("ALGO");
 
 reach.setWalletFallback(reach.walletFallback({ providerEnv: "TestNet", MyAlgoConnect,}));
-const { standardUnit } = stdlib;
+const { standardUnit } = reach;
 const sleep = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
 
 export const ReachContext = React.createContext();
 
-const ReachContextProvider = ({ children }) => {
+const ReachContextProvider = ({children}) => {
 	const [view, setView] = useState('ConnectAccount');
 	const [defaultFundAmt, setDefaultFundAmt] = useState('10');
 	const [defaultMin, setDefaultMin] = useState('5');
@@ -58,7 +58,7 @@ const ReachContextProvider = ({ children }) => {
 		setContentView(Bidder);
 	}
 
-	const setinfo = () =>  {
+	const SetInfo = () =>  {
 		setView('SetInfo');
 	}
 
@@ -97,13 +97,13 @@ const ReachContextProvider = ({ children }) => {
 	}
 
 
-	const showOutcome = (addr, amt) => {
+	const ShowOutcome = (addr, amt) => {
 		setView('ShowOutcome');
 		setWinAdd(stdlib.formatAddress(addr));
 		setHighBid(stdlib.formatCurrency(amt));
 	}
 
-	const attach = async (ctcInfoStr) => {
+	const Attach = async (ctcInfoStr) => {
 		const acc = await stdlib.getDefaultAccount();
 		const ctc2 = acc.contract(backend, JSON.parse(ctcInfoStr));
 		const tBid = await ctc2.v.min();
@@ -157,13 +157,13 @@ const ReachContextProvider = ({ children }) => {
 		start,
 		selectCreator,
 		selectBidder,
-		setInfo,
-		deploy,
+		SetInfo,
+		Deploy,
 		getSale,
 		auctionReady,
 		seeBid,
-		showOutcome,
-		attach,
+		ShowOutcome,
+		Attach,
 		bidFunc,
 		setBid,
 	};
