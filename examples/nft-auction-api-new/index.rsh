@@ -17,8 +17,8 @@ export const main = Reach.App(() => {
     const V = View({
         min: UInt,
         nft: Token,
-        currentBid: UInt,
-      })
+        currBid: UInt,
+    });
     init();
 
     Creator.only(() => {
