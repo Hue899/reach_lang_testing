@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.75.0"
+  }
+}
