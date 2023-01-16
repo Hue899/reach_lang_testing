@@ -11,8 +11,6 @@ export function renderDOM(app) {
 	);
 
 };
-//const root = ReactDOM.createRoot(document.getElementById('root'));
-//root.render(< />);
 
 const RenderViews = (Views) => {
 	const { views } = useReach();
