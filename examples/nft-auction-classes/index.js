@@ -8,7 +8,7 @@ import * as backend from './build/index.main.mjs';
 import {loadStdlib} from '@reach-sh/stdlib';
 const stdlib = loadStdlib(process.env);
 
-import { ALGO_MyAlgoConnect as MyAlgoConnect} from '@reach-sh/stdlib';
+import MyAlgoConnect from '@randlabs/myalgo-connect'
 stdlib.setWalletFallback(stdlib.walletFallback({
   providerEnv: 'TestNet',
   MyAlgoConnect

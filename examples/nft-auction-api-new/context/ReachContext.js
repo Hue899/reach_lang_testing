@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as backend from "../build/index.main.mjs";
-import {loadStdlib, ALGO_MyAlgoConnect as MyAlgoConnect,} from "@reach-sh/stdlib";
+import MyAlgoConnect from '@randlabs/myalgo-connect'
 const reach = loadStdlib("ALGO");
 
 reach.setWalletFallback(reach.walletFallback({ providerEnv: "TestNet", MyAlgoConnect,}));
@@ -58,11 +58,11 @@ const ReachContextProvider = ({children}) => {
 		setContentView(Bidder);
 	}
 
-	const SetInfo = () =>  {
+	const setInfo = () =>  {
 		setView('SetInfo');
 	}
 
-	const Deploy = async () => {
+	const deploy = async () => {
 		setView('Deploying');
 		setMin(stdlib.parseCurrency(min));
 		backend.Creator(ctc, this);
@@ -97,13 +97,13 @@ const ReachContextProvider = ({children}) => {
 	}
 
 
-	const ShowOutcome = (addr, amt) => {
+	const showOutcome = (addr, amt) => {
 		setView('ShowOutcome');
 		setWinAdd(stdlib.formatAddress(addr));
 		setHighBid(stdlib.formatCurrency(amt));
 	}
 
-	const Attach = async (ctcInfoStr) => {
+	const attach = async (ctcInfoStr) => {
 		const acc = await stdlib.getDefaultAccount();
 		const ctc2 = acc.contract(backend, JSON.parse(ctcInfoStr));
 		const tBid = await ctc2.v.min();
@@ -157,13 +157,13 @@ const ReachContextProvider = ({children}) => {
 		start,
 		selectCreator,
 		selectBidder,
-		SetInfo,
-		Deploy,
+		setInfo,
+		deploy,
 		getSale,
 		auctionReady,
 		seeBid,
-		ShowOutcome,
-		Attach,
+		showOutcome,
+		attach,
 		bidFunc,
 		setBid,
 	};
